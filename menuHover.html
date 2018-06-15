@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>菜单高亮</title>
+	<script type="text/javascript" src="jquery.js"></script>
+	<style type="text/css">
+		ul{
+			list-style: none;
+		}
+		li span{
+			float: left;
+			width: 20px;
+			height: 20px;
+			margin-right: 20px;
+			background-color: #000;
+			vertical-align: middle;
+		}
+		li p{
+			font-size: 16px;
+			line-height: 20px;
+		}
+		li{
+			cursor: pointer;
+		}
+		/*下面是重点，在操作的class下加样式*/
+		.active .icon1{
+			background-color: red;
+		}
+		.active .icon2{
+			background-color: orange;
+		}
+		.active .icon3{
+			background-color: yellow;
+		}
+		.active .icon4{
+			background-color: blue;
+		}
+		.active .icon5{
+			background-color: pink;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li class="active">
+			<span class="icon1"></span>
+			<p>大榴莲</p>
+		</li>
+		<li>
+			<span class="icon2"></span>
+			<p>大榴莲</p>
+		</li>
+		<li>
+			<span class="icon3"></span>
+			<p>大榴莲</p>
+		</li>
+		<li>
+			<span class="icon4"></span>
+			<p>大榴莲</p>
+		</li>
+		<li>
+			<span class="icon5"></span>
+			<p>大榴莲</p>
+		</li>
+	</ul>
+
+<script type="text/javascript">
+	$(function(){
+		$('li').hover(function(){
+			$(this).addClass('active').siblings().removeClass('active');
+		})
+	})
+</script>
+</body>
+</html>
